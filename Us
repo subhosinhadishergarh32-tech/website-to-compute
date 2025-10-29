@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Happy 1st Anniversary — Subhojeet ❤️ Aditi</title>
+<style>
+  /* Reset */
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(135deg,#fff7fb 0%, #ffeef6 50%, #fff9f1 100%);
+    overflow:hidden;
+    color:#333;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+  }
+
+  /* Card */
+  .card{
+    width:100%;
+    max-width:820px;
+    background: rgba(255,255,255,0.85);
+    border-radius:18px;
+    box-shadow: 0 10px 30px rgba(20,20,40,0.08);
+    padding:30px;
+    position:relative;
+    overflow:hidden;
+    min-height:520px;
+  }
+
+  /* Floating hearts canvas */
+  .hearts { position:absolute; inset:0; pointer-events:none; }
+
+  /* Header */
+  .header{
+    text-align:center;
+    margin-bottom:14px;
+  }
+  .main-title{
+    font-size:28px;
+    font-weight:700;
+    letter-spacing:0.2px;
+    opacity:0;
+    transform: translateY(14px);
+    animation: fadeInUp 900ms ease forwards 300ms;
+  }
+  .subtitle{
+    margin-top:8px;
+    font-size:16px;
+    color:#6b5360;
+    opacity:0;
+    transform: translateY(10px);
+    animation: fadeInUp 900ms ease forwards 500ms;
+  }
+
+  /* Letter area */
+  .letter-wrap{
+    margin-top:18px;
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+  }
+  .photo{
+    width:120px;
+    height:120px;
+    border-radius:12px;
+    background: linear-gradient(135deg,#fbe8ef,#fff1f6);
+    flex:0 0 120px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#b45a7a;
+    font-weight:700;
+    font-size:20px;
+    box-shadow:0 6px 18px rgba(180,90,122,0.08);
+  }
+  .letter{
+    flex:1;
+    background:rgba(255,255,255,0.6);
+    border-radius:12px;
+    padding:18px;
+    min-height:220px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  /* typewriter text */
+  .typewriter{
+    font-size:15px;
+    line-height:1.6;
+    color:#3a2a34;
+    white-space:pre-wrap;
+    font-family: "Georgia", serif;
+  }
+
+  /* footer names */
+  .footer{
+    margin-top:18px;
+    text-align:center;
+    font-weight:700;
+    color:#7a3750;
+    font-size:16px;
+    opacity:0;
+    animation: fadeInUp 900ms ease forwards 1200ms;
+  }
+  .muted{ font-weight:500; color:#8b6b78; font-size:13px; margin-top:6px; }
+
+  /* open button */
+  .open-btn{
+    display:block;
+    margin:20px auto 0;
+    background: linear-gradient(90deg,#ff8eb6,#ff6a93);
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:16px;
+    box-shadow:0 8px 22px rgba(255,102,153,0.18);
+    cursor:pointer;
+  }
+
+  /* small hearts pop */
+  .spark{
+    position:absolute;
+    width:12px;height:12px;
+    background:transparent;
+    transform:translate(-50%,-50%);
+    pointer-events:none;
+  }
+
+  /* animations */
+  @keyframes fadeInUp {
+    to{ opacity:1; transform:none; }
+  }
+
+  /* responsive */
+  @media (max-width:640px){
+    .letter-wrap{ flex-direction:column; }
+    .photo{ align-self:center; }
+  }
+</style>
+</head>
+<body>
+  <div class="card" role="main" aria-labelledby="title">
+    <div class="hearts" id="hearts"></div>
+
+    <div class="header">
+      <div id="title" class="main-title">Happy 1st Anniversary, Aditi ❤️</div>
+      <div class="subtitle">One year of us, one year of love, and countless memories together. You’ve made my world brighter in every way.</div>
+    </div>
+
+    <div class="letter-wrap" aria-live="polite">
+      <div class="photo" aria-hidden="true">S ❤️ A</div>
+      <div class="letter">
+        <div id="type" class="typewriter"></div>
+      </div>
+    </div>
+
+    <div class="footer" id="footerText">
+      <div>Subhojeet ❤️ Aditi</div>
+      <div class="muted">Forever &amp; Always</div>
+    </div>
+
+    <button class="open-btn" id="openBtn">Open Surprise ❤️</button>
+
+    <!-- Hidden audio element -->
+    <audio id="bgAudio" loop preload="auto">
+      <!-- Placeholder: replace src with your mp3 link or upload to Glitch assets -->
+      <source src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_8a0c1d3a2d.mp3?filename=romantic-acoustic-guitar-11831.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+<script>
+  // The letter text (you can edit this directly)
+  const letterText = `My Dearest Aditi,
+
+Today marks one whole year since we started this beautiful journey together — our first anniversary. It feels like just yesterday we were two friends slowly discovering how special we are to each other, and now, here we are — a year of love, laughter, little fights, and countless memories later.
+
+Aditi, you’ve become such an important part of my life. You make my days brighter with your presence, your calmness, and the little things you do without even realizing how much they mean to me. I still remember all those moments — the way we wait for each other before college, our random chats, our tea breaks — all of it feels so precious.
+
+You may say you’re not romantic, but to me, your care, honesty, and the way you simply are — that’s the most genuine kind of love. You’ve shown me that love doesn’t need big gestures, just real feelings.
+
+On our first anniversary, I just want to say thank you. Thank you for being “you.” For understanding me, for staying by my side, and for making this year one of the most beautiful parts of my life. I promise to keep making you smile, to grow with you, and to cherish every little moment we share — no matter where life takes us.
+
+With all my heart,
+Yours, Subhojeet ❤️`;
+  
+  // Typewriter effect
+  const typeEl = document.getElementById('type');
+  let idx = 0;
+  const speed = 18;
+
+  function typeNext() {
+    if (idx <= letterText.length) {
+      typeEl.textContent = letterText.slice(0, idx);
+      idx++;
+      setTimeout(typeNext, speed);
+    }
+  }
+
+  // Heart particles
+  const heartsContainer = document.getElementById('hearts');
+  function spawnHeart() {
+    const h = document.createElement('div');
+    h.className = 'spark';
+    const size = 8 + Math.random()*20;
+    h.style.width = h.style.height = size + 'px';
+    h.style.left = (Math.random()*100) + '%';
+    h.style.top = (20 + Math.random()*60) + '%';
+    h.style.backgroundImage = `radial-gradient(circle at 30% 30%, rgba(255,255,255,0.9), rgba(255,0,120,0.9))`;
+    h.style.borderRadius = '50%';
+    h.style.opacity = 0.9;
+    heartsContainer.appendChild(h);
+
+    const destY = -100 - Math.random()*200;
+    h.animate([
+      { transform: 'translateY(0) scale(1)', opacity: 1 },
+      { transform: `translateY(${destY}px) scale(0.6)`, opacity: 0 }
+    ], {
+      duration: 3500 + Math.random()*2000,
+      easing: 'ease-out'
+    });
+    setTimeout(()=> h.remove(), 5200);
+  }
+  // spawn periodically
+  setInterval(spawnHeart, 650);
+
+  // Open button behavior: plays audio and starts typewriter
+  const openBtn = document.getElementById('openBtn');
+  const audio = document.getElementById('bgAudio');
+  let opened = false;
+  openBtn.addEventListener('click', function(){
+    if (opened) return;
+    opened = true;
+    // try to play audio
+    audio.play().catch(()=>{ /* ignored */ });
+    openBtn.textContent = 'Playing... 🎶';
+    openBtn.disabled = true;
+
+    // start typing and show footer after
+    typeNext();
+    setTimeout(()=> {
+      document.getElementById('footerText').style.opacity = 1;
+    }, 2200);
+  });
+
+  // Accessibility: Stop music on Escape
+  window.addEventListener('keydown', (e)=> {
+    if (e.key === 'Escape') {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  });
+
+  // Mobile friendly: if audio fails to play due to browser, show small instruction
+  audio.addEventListener('error', ()=> {
+    openBtn.textContent = 'Tap to Open (tap again to play music)';
+    openBtn.disabled = false;
+  });
+</script>
+</body>
+</html>
